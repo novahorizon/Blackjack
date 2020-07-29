@@ -10,7 +10,7 @@ class CARD:
 
 class DECK:
     def __init__(self):
-        suits = ["Spades", "Diamonds", "Clubs", "Hearts"]
+        suits = ["Spades", "Diamonds", "Clubs", "Hearts"] # These currently don't actually matter...
         faces = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
         values = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
         self.cards = []

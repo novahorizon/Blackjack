@@ -12,7 +12,6 @@ def rungames(q):
     shoe.shuffle()
     for _ in range(50000):
 
-        myhand = None
         if len(shoe.cards) < 50:
             shoe = SHOE()
             shoe.shuffle()
@@ -38,11 +37,8 @@ def rungames(q):
             t = []
             for h in player.hands:
                 t.append(h.total)
-            m = myhand.total
             player.endRound(myhand.total)
-    # print("----")
-    # for p in players:
-    #     print(f"{p.wins / p.total * 100}")
+
     q.put(players[0].wins / players[0].total * 100)
 
 if __name__ == '__main__':
@@ -61,10 +57,5 @@ if __name__ == '__main__':
         results.append(q[i].get())
         p[i].join()
 
-    # q = Queue()
-    # p = Process(target=rungames, args=(q,))
-    # p.start()
-    # print(q.get())
-    # p.join()
     print(f"Total time: {time.time()-start}")
     print(f"Margin of error: {max(results) - min(results)}\nHigh:\t{max(results)}\nLow:\t{min(results)}")
